@@ -22,8 +22,7 @@ export default function Header() {
   const navItems = [
     { path: '/', label: '首页' },
     { path: '/models', label: '车型一览' },
-    { path: '/buying', label: '购车支持' },
-    { path: '/service', label: '售后服务' },
+    { path: '/buying-service', label: '购车与服务' },
     { path: '/parts', label: '汽车配件' },
     { path: '/contact', label: '联系我们' },
   ];

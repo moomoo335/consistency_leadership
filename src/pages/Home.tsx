@@ -237,7 +237,7 @@ export default function Home() {
                 </li>
               </ul>
               <Link
-                to="/service"
+                to="/buying-service"
                 className="inline-flex items-center mt-8 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all"
               >
                 了解更多

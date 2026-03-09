@@ -36,13 +36,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/buying" className="hover:text-red-500 transition-colors">
-                  购车支持
+                <Link to="/buying-service" className="hover:text-red-500 transition-colors">
+                  购车与服务
                 </Link>
               </li>
               <li>
-                <Link to="/service" className="hover:text-red-500 transition-colors">
-                  售后服务
+                <Link to="/contact" className="hover:text-red-500 transition-colors">
+                  联系我们
                 </Link>
               </li>
             </ul>

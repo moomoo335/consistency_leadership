@@ -4,8 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Models from './pages/Models';
-import Buying from './pages/Buying';
-import Service from './pages/Service';
+import BuyingService from './pages/BuyingService';
 import Parts from './pages/Parts';
 import Contact from './pages/Contact';
 
@@ -29,8 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/models" element={<Models />} />
-            <Route path="/buying" element={<Buying />} />
-            <Route path="/service" element={<Service />} />
+            <Route path="/buying-service" element={<BuyingService />} />
             <Route path="/parts" element={<Parts />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
