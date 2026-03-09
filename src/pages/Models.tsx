@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, Truck } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 export default function Models() {
   const brands = [
@@ -7,11 +7,13 @@ export default function Models() {
       name: '乘龙展厅',
       path: '/models/chenglong',
       description: '中国领先的商用车品牌',
+      logo: '/chenglong-logo.png',
     },
     {
       name: '欧曼展厅',
       path: '/models/auman',
       description: '高端重卡品牌，融合欧洲技术',
+      logo: '/auman-logo.png',
     },
   ];
 
@@ -36,8 +38,12 @@ export default function Models() {
                   to={brand.path}
                   className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border-2 border-transparent hover:border-red-600"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center mb-6">
-                    <Truck className="text-white" size={32} />
+                  <div className="flex items-center justify-center mb-6 h-20">
+                    <img
+                      src={brand.logo}
+                      alt={`${brand.name} Logo`}
+                      className="h-full w-auto object-contain"
+                    />
                   </div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">{brand.name}</h2>
                   <p className="text-gray-600 mb-6">{brand.description}</p>
