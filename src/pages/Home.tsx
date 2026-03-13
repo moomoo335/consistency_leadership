@@ -38,13 +38,13 @@ export default function Home() {
       title: '购车支持',
       description: '快速审批，低首付，灵活还款方案',
       image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=800',
-      link: '/buying-service',
+      link: '/services/finance',
     },
     {
       title: '维修保养',
       description: '专业技师团队，原厂设备，品质保证',
       image: 'https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800',
-      link: '/buying-service#maintenance',
+      link: '/services/maintenance',
     },
     {
       title: '原厂配件',

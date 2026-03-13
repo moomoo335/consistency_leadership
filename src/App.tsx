@@ -7,6 +7,8 @@ import Models from './pages/Models';
 import ChenglongShowroom from './pages/ChenglongShowroom';
 import AumanShowroom from './pages/AumanShowroom';
 import BuyingService from './pages/BuyingService';
+import FinanceService from './pages/FinanceService';
+import MaintenanceService from './pages/MaintenanceService';
 import Parts from './pages/Parts';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -34,6 +36,8 @@ function App() {
             <Route path="/models/chenglong" element={<ChenglongShowroom />} />
             <Route path="/models/auman" element={<AumanShowroom />} />
             <Route path="/buying-service" element={<BuyingService />} />
+            <Route path="/services/finance" element={<FinanceService />} />
+            <Route path="/services/maintenance" element={<MaintenanceService />} />
             <Route path="/parts" element={<Parts />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
