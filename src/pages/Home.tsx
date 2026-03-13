@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, Truck, Wrench, Package, DollarSign, Shield, Users, Award, Clock } from 'lucide-react';
+import { ChevronRight, Shield, Users, Award } from 'lucide-react';
 
 export default function Home() {
   const featuredVehicles = [
@@ -35,19 +35,22 @@ export default function Home() {
 
   const services = [
     {
-      icon: DollarSign,
       title: '购车支持',
       description: '快速审批，低首付，灵活还款方案',
+      image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=800',
+      link: '/buying-service',
     },
     {
-      icon: Wrench,
       title: '维修保养',
       description: '专业技师团队，原厂设备，品质保证',
+      image: 'https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800',
+      link: '/buying-service#maintenance',
     },
     {
-      icon: Package,
       title: '原厂配件',
       description: '品类齐全，正品保障，快速供应',
+      image: 'https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=800',
+      link: '/parts',
     },
   ];
 
@@ -159,18 +162,30 @@ export default function Home() {
             <p className="text-gray-600 text-lg">提供全方位商用车服务解决方案</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all text-center"
+                to={service.link}
+                className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <service.icon className="text-white" size={32} />
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-              </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <div className="inline-flex items-center text-red-600 font-semibold group-hover:gap-2 transition-all">
+                    了解更多
+                    <ChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" size={18} />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
