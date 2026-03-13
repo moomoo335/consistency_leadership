@@ -125,31 +125,26 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredVehicles.map((vehicle) => (
-              <div
+              <Link
                 key={vehicle.id}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2"
+                to="/models"
+                className="group relative h-[350px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={vehicle.image}
-                    alt={vehicle.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{vehicle.name}</h3>
-                  <p className="text-gray-600 mb-3">{vehicle.description}</p>
-                  <p className="text-sm text-gray-500 mb-4">{vehicle.specs}</p>
-                  <Link
-                    to="/models"
-                    className="inline-flex items-center text-red-600 hover:text-red-700 font-semibold"
-                  >
+                <img
+                  src={vehicle.image}
+                  alt={vehicle.name}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/50 transition-colors"></div>
+                <div className="relative h-full flex flex-col justify-end p-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{vehicle.name}</h3>
+                  <p className="text-gray-100 mb-6">{vehicle.description}</p>
+                  <div className="inline-flex items-center text-white font-semibold group-hover:text-red-400 transition-colors">
                     查看详情
-                    <ChevronRight size={16} className="ml-1" />
-                  </Link>
+                    <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -167,20 +162,18 @@ export default function Home() {
               <Link
                 key={index}
                 to={service.link}
-                className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2"
+                className="group relative h-[350px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
               >
-                <div className="relative h-52 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <div className="inline-flex items-center text-red-600 font-semibold group-hover:gap-2 transition-all">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/50 transition-colors"></div>
+                <div className="relative h-full flex flex-col justify-end p-8">
+                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-gray-100 mb-6">{service.description}</p>
+                  <div className="inline-flex items-center text-white font-semibold group-hover:text-red-400 transition-colors">
                     了解更多
                     <ChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" size={18} />
                   </div>
