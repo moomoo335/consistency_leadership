@@ -8,12 +8,14 @@ export default function Models() {
       path: '/models/chenglong',
       description: '中国领先的商用车品牌',
       logo: '/chenglong-logo.png',
+      image: '/chenglong-truck.jpg',
     },
     {
       name: '欧曼展厅',
       path: '/models/auman',
       description: '高端重卡品牌，融合欧洲技术',
       logo: '/auman-logo.png',
+      image: '/auman-truck.jpg',
     },
   ];
 
@@ -21,35 +23,45 @@ export default function Models() {
     <div className="min-h-screen bg-slate-50">
       <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 mt-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">车型一览</h1>
+          <h1 className="text-5xl font-bold mb-6">车型中心</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            提供全系商用车型，满足各类运输需求
+            选择品牌，探索专业商用车型
           </p>
         </div>
       </section>
 
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {brands.map((brand) => (
                 <Link
                   key={brand.path}
                   to={brand.path}
-                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border-2 border-transparent hover:border-red-600"
+                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border-2 border-transparent hover:border-red-600"
                 >
-                  <div className="flex items-center justify-center mb-6 h-20">
+                  <div className="relative h-64 overflow-hidden">
                     <img
-                      src={brand.logo}
-                      alt={`${brand.name} Logo`}
-                      className="h-full w-auto object-contain"
+                      src={brand.image}
+                      alt={brand.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div className="absolute top-6 left-6 bg-white p-3 rounded-lg shadow-lg">
+                      <img
+                        src={brand.logo}
+                        alt={`${brand.name} Logo`}
+                        className="h-12 w-auto object-contain"
+                      />
+                    </div>
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-900 mb-3">{brand.name}</h2>
-                  <p className="text-gray-600 mb-6">{brand.description}</p>
-                  <div className="inline-flex items-center text-red-600 font-semibold">
-                    进入展厅
-                    <ChevronRight className="ml-2" size={20} />
+                  <div className="p-8">
+                    <h2 className="text-2xl font-bold text-slate-900 mb-3">{brand.name}</h2>
+                    <p className="text-gray-600 mb-6">{brand.description}</p>
+                    <div className="inline-flex items-center text-red-600 font-semibold group-hover:gap-3 transition-all">
+                      进入展厅
+                      <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                    </div>
                   </div>
                 </Link>
               ))}

@@ -38,7 +38,7 @@ export default function ChenglongShowroom() {
             className="inline-flex items-center text-gray-300 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
-            返回车型一览
+            返回车型中心
           </Link>
           <div className="max-w-4xl">
             <h1 className="text-6xl font-bold mb-6">乘龙卡车</h1>

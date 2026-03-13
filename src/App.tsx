@@ -8,6 +8,7 @@ import ChenglongShowroom from './pages/ChenglongShowroom';
 import AumanShowroom from './pages/AumanShowroom';
 import BuyingService from './pages/BuyingService';
 import Parts from './pages/Parts';
+import About from './pages/About';
 import Contact from './pages/Contact';
 
 function ScrollToTop() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/models/auman" element={<AumanShowroom />} />
             <Route path="/buying-service" element={<BuyingService />} />
             <Route path="/parts" element={<Parts />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

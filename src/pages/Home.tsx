@@ -35,13 +35,8 @@ export default function Home() {
 
   const services = [
     {
-      icon: Truck,
-      title: '车辆销售',
-      description: '提供多品牌商用车销售，满足不同运输需求',
-    },
-    {
       icon: DollarSign,
-      title: '购车金融',
+      title: '购车支持',
       description: '快速审批，低首付，灵活还款方案',
     },
     {
@@ -59,23 +54,18 @@ export default function Home() {
   const advantages = [
     {
       icon: Shield,
-      title: '厂家授权经销商',
+      title: '厂家授权',
       description: '多品牌授权，正规渠道保障',
     },
     {
       icon: Users,
-      title: '专业技术团队',
-      description: '10年以上经验，持证上岗',
+      title: '专业维修团队',
+      description: '经验丰富，持证上岗',
     },
     {
       icon: Award,
-      title: '完善售后体系',
-      description: '全国联保，24小时应急服务',
-    },
-    {
-      icon: Clock,
-      title: '快速金融审批',
-      description: '最快当天放款，灵活方案',
+      title: '完善售后服务',
+      description: '全程跟踪，贴心保障',
     },
   ];
 
@@ -169,7 +159,7 @@ export default function Home() {
             <p className="text-gray-600 text-lg">提供全方位商用车服务解决方案</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -189,11 +179,11 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">为什么选择我们</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">公司优势</h2>
             <p className="text-gray-600 text-lg">专业、可靠、值得信赖的商用车服务商</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {advantages.map((item, index) => (
               <div
                 key={index}
@@ -210,81 +200,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">专业服务中心</h2>
-              <p className="text-gray-300 text-lg mb-6">
-                配备先进维修设备和专业技术团队，为您的车辆提供全方位保障
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-300">原厂标准维修车间，设备先进齐全</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-300">10年以上经验技师团队，持证上岗</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-300">原厂配件供应，质量有保障</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-300">24小时应急救援服务</span>
-                </li>
-              </ul>
-              <Link
-                to="/buying-service"
-                className="inline-flex items-center mt-8 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all"
-              >
-                了解更多
-                <ChevronRight className="ml-2" size={20} />
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-slate-800 rounded-xl p-6 text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2">100+</div>
-                <div className="text-gray-400">服务客户</div>
-              </div>
-              <div className="bg-slate-800 rounded-xl p-6 text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
-                <div className="text-gray-400">全天候服务</div>
-              </div>
-              <div className="bg-slate-800 rounded-xl p-6 text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2">10+</div>
-                <div className="text-gray-400">年行业经验</div>
-              </div>
-              <div className="bg-slate-800 rounded-xl p-6 text-center">
-                <div className="text-4xl font-bold text-blue-400 mb-2">98%</div>
-                <div className="text-gray-400">客户满意度</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">关于我们</h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              重庆恒帅汽车销售有限公司成立于2024年，注册资本100万元，位于重庆市江北区。
-              公司专注于商用车销售、维修服务及配件供应，致力于为客户提供优质、高效的一站式汽车服务解决方案。
-            </p>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              我们秉承"专业、诚信、创新、共赢"的经营理念，以客户需求为导向，
-              不断提升服务质量，努力成为客户信赖的商用车服务合作伙伴。
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-gradient-to-br from-blue-900 to-slate-900 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">准备购买商用车？</h2>
+          <h2 className="text-4xl font-bold mb-6">联系我们</h2>
           <p className="text-xl text-gray-300 mb-8">
             我们的专业团队随时为您提供咨询服务
           </p>
