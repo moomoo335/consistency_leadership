@@ -1,83 +1,53 @@
-import { Car, Wrench, Package, CreditCard, Shield, Headphones } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 export default function Services() {
   const services = [
     {
-      icon: Car,
-      title: '新车销售',
-      description: '提供多品牌新车销售服务，车型选择丰富，价格透明合理',
-      color: 'from-blue-500 to-blue-600',
+      title: '购车支持',
+      description: '灵活金融与保险方案,降低企业资金压力,助力快速投入运营。',
+      image: 'https://images.pexels.com/photos/972995/pexels-photo-972995.jpeg',
+      link: '/service/finance',
     },
     {
-      icon: Package,
-      title: '二手车交易',
-      description: '正规二手车交易平台，车况透明，手续齐全，售后有保障',
-      color: 'from-green-500 to-green-600',
-    },
-    {
-      icon: Wrench,
       title: '维修保养',
-      description: '专业的汽车维修保养服务，使用原厂配件，技术精湛',
-      color: 'from-orange-500 to-orange-600',
-    },
-    {
-      icon: Package,
-      title: '配件供应',
-      description: '提供原厂及优质品牌配件，保证质量，价格实惠',
-      color: 'from-purple-500 to-purple-600',
-    },
-    {
-      icon: CreditCard,
-      title: '金融服务',
-      description: '多种汽车金融方案，灵活的贷款方式，助您轻松购车',
-      color: 'from-red-500 to-red-600',
-    },
-    {
-      icon: Shield,
-      title: '保险代理',
-      description: '代理多家保险公司业务，为客户提供全面的车险服务',
-      color: 'from-teal-500 to-teal-600',
-    },
-    {
-      icon: Headphones,
-      title: '售后服务',
-      description: '完善的售后服务体系，7×24小时客户服务热线',
-      color: 'from-indigo-500 to-indigo-600',
-    },
-    {
-      icon: Car,
-      title: '汽车租赁',
-      description: '提供短期、长期汽车租赁服务，车型多样，手续便捷',
-      color: 'from-pink-500 to-pink-600',
+      description: '原厂技术与专业服务网络,确保车辆高效运行,减少停运风险。',
+      image: 'https://images.pexels.com/photos/4489743/pexels-photo-4489743.jpeg',
+      link: '/service/maintenance',
     },
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">产品与服务</h2>
-          <div className="w-20 h-1 bg-red-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            为客户提供全方位、一站式的汽车服务解决方案
-          </p>
+    <section id="services" className="py-24 bg-white">
+      <div className="max-w-[1200px] mx-auto px-8">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">我们的服务</h2>
+          <div className="w-20 h-1 bg-red-600 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2 border border-gray-100"
-            >
-              <div className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mb-4`}>
-                <service.icon className="text-white" size={28} />
+            <div key={index} className="group">
+              <div className="mb-6 overflow-hidden rounded">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-3xl font-semibold text-gray-900 mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-base text-gray-600 leading-relaxed mb-6">
                 {service.description}
               </p>
+              <Link
+                to={service.link}
+                className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 hover:opacity-70 transition-opacity"
+              >
+                了解更多
+                <ArrowRight size={16} />
+              </Link>
             </div>
           ))}
         </div>
