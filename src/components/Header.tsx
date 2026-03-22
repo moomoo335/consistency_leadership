@@ -32,49 +32,48 @@ export default function Header() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95'
-      }`}
-    >
-      <div className="max-w-[1400px] mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <Truck className="text-slate-900" size={32} />
-            <span className="font-bold text-xl text-slate-900">
-              重庆恒帅汽车
-            </span>
-          </Link>
-
-          <nav className="hidden lg:flex items-center space-x-8 relative">
-            <Link
-              to="/"
-              className={`font-medium transition-all ${
-                location.pathname === '/'
-                  ? 'text-slate-900 border-b-2 border-red-600'
-                  : 'text-gray-600 hover:text-slate-900'
-              }`}
-            >
-              首页
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white shadow-md' : 'bg-white/95'
+        }`}
+      >
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            <Link to="/" className="flex items-center space-x-3 group">
+              <Truck className="text-slate-900" size={32} />
+              <span className="font-bold text-xl text-slate-900">
+                重庆恒帅汽车
+              </span>
             </Link>
 
-            <div
-              className="relative"
-              onMouseEnter={() => setIsMegaMenuOpen(true)}
-              onMouseLeave={() => setIsMegaMenuOpen(false)}
-            >
+            <nav className="hidden lg:flex items-center space-x-8">
               <Link
-                to="/models"
+                to="/"
                 className={`font-medium transition-all ${
-                  location.pathname === '/models'
+                  location.pathname === '/'
                     ? 'text-slate-900 border-b-2 border-red-600'
                     : 'text-gray-600 hover:text-slate-900'
                 }`}
               >
-                车型中心
+                首页
               </Link>
-              <MegaMenu isVisible={isMegaMenuOpen} />
-            </div>
+
+              <div
+                onMouseEnter={() => setIsMegaMenuOpen(true)}
+                onMouseLeave={() => setIsMegaMenuOpen(false)}
+              >
+                <Link
+                  to="/models"
+                  className={`font-medium transition-all ${
+                    location.pathname === '/models'
+                      ? 'text-slate-900 border-b-2 border-red-600'
+                      : 'text-gray-600 hover:text-slate-900'
+                  }`}
+                >
+                  车型中心
+                </Link>
+              </div>
 
             <Link
               to="/buying-service"
@@ -146,7 +145,15 @@ export default function Header() {
             ))}
           </nav>
         )}
+        </div>
+      </header>
+
+      <div
+        onMouseEnter={() => setIsMegaMenuOpen(true)}
+        onMouseLeave={() => setIsMegaMenuOpen(false)}
+      >
+        <MegaMenu isVisible={isMegaMenuOpen} />
       </div>
-    </header>
+    </>
   );
 }
