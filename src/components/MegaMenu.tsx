@@ -22,16 +22,16 @@ export default function MegaMenu({ isVisible }: MegaMenuProps) {
 
   return (
     <div
-      className={`absolute left-0 right-0 top-full bg-white shadow-2xl transition-all duration-300 ease-out ${
+      className={`absolute left-0 top-full bg-white shadow-2xl transition-all duration-300 ease-out min-w-[900px] ${
         isVisible
           ? 'opacity-100 translate-y-0 pointer-events-auto'
           : 'opacity-0 -translate-y-4 pointer-events-none'
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="px-8 py-12">
+        <div className="flex gap-16">
+          <div className="flex-[2]">
+            <div className="flex gap-12">
               <div>
                 <h3 className="text-lg font-bold text-slate-900 mb-6 pb-3 border-b-2 border-slate-200">
                   乘龙展厅
@@ -78,8 +78,8 @@ export default function MegaMenu({ isVisible }: MegaMenuProps) {
             </div>
           </div>
 
-          <div className="lg:col-span-1">
-            <div className="bg-gray-50 rounded-lg p-8 h-full flex flex-col">
+          <div className="flex-1">
+            <div className="bg-gray-50 rounded-lg p-8 h-full flex flex-col min-w-[280px]">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">车型中心</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 提供多品牌、多类型商用车选择，满足不同运输需求

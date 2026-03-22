@@ -47,21 +47,16 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              item.label !== '车型中心' ? (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`font-medium transition-all ${
-                    location.pathname === item.path
-                      ? 'text-slate-900 border-b-2 border-red-600'
-                      : 'text-gray-600 hover:text-slate-900'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ) : null
-            ))}
+            <Link
+              to="/"
+              className={`font-medium transition-all ${
+                location.pathname === '/'
+                  ? 'text-slate-900 border-b-2 border-red-600'
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
+              首页
+            </Link>
 
             <div
               className="relative"
@@ -80,6 +75,50 @@ export default function Header() {
               </Link>
               <MegaMenu isVisible={isMegaMenuOpen} />
             </div>
+
+            <Link
+              to="/buying-service"
+              className={`font-medium transition-all ${
+                location.pathname === '/buying-service'
+                  ? 'text-slate-900 border-b-2 border-red-600'
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
+              购车与服务
+            </Link>
+
+            <Link
+              to="/parts"
+              className={`font-medium transition-all ${
+                location.pathname === '/parts'
+                  ? 'text-slate-900 border-b-2 border-red-600'
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
+              汽车配件
+            </Link>
+
+            <Link
+              to="/about"
+              className={`font-medium transition-all ${
+                location.pathname === '/about'
+                  ? 'text-slate-900 border-b-2 border-red-600'
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
+              关于我们
+            </Link>
+
+            <Link
+              to="/contact"
+              className={`font-medium transition-all ${
+                location.pathname === '/contact'
+                  ? 'text-slate-900 border-b-2 border-red-600'
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
+              联系我们
+            </Link>
           </nav>
 
           <button
