@@ -48,25 +48,7 @@ export default function Header() {
 
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              item.label === '车型中心' ? (
-                <div
-                  key={item.path}
-                  className="relative"
-                  onMouseEnter={() => setIsMegaMenuOpen(true)}
-                  onMouseLeave={() => setIsMegaMenuOpen(false)}
-                >
-                  <Link
-                    to={item.path}
-                    className={`font-medium transition-all ${
-                      location.pathname === item.path
-                        ? 'text-slate-900 border-b-2 border-red-600'
-                        : 'text-gray-600 hover:text-slate-900'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                </div>
-              ) : (
+              item.label !== '车型中心' ? (
                 <Link
                   key={item.path}
                   to={item.path}
@@ -78,8 +60,26 @@ export default function Header() {
                 >
                   {item.label}
                 </Link>
-              )
+              ) : null
             ))}
+
+            <div
+              className="relative"
+              onMouseEnter={() => setIsMegaMenuOpen(true)}
+              onMouseLeave={() => setIsMegaMenuOpen(false)}
+            >
+              <Link
+                to="/models"
+                className={`font-medium transition-all ${
+                  location.pathname === '/models'
+                    ? 'text-slate-900 border-b-2 border-red-600'
+                    : 'text-gray-600 hover:text-slate-900'
+                }`}
+              >
+                车型中心
+              </Link>
+              <MegaMenu isVisible={isMegaMenuOpen} />
+            </div>
           </nav>
 
           <button
@@ -107,13 +107,6 @@ export default function Header() {
             ))}
           </nav>
         )}
-      </div>
-
-      <div
-        onMouseEnter={() => setIsMegaMenuOpen(true)}
-        onMouseLeave={() => setIsMegaMenuOpen(false)}
-      >
-        <MegaMenu isVisible={isMegaMenuOpen} />
       </div>
     </header>
   );
