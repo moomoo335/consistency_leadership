@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Truck } from 'lucide-react';
+import MegaMenu from './MegaMenu';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,6 +19,7 @@ export default function Header() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsMegaMenuOpen(false);
   }, [location]);
 
   const navItems = [
@@ -45,17 +48,37 @@ export default function Header() {
 
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`font-medium transition-all ${
-                  location.pathname === item.path
-                    ? 'text-slate-900 border-b-2 border-red-600'
-                    : 'text-gray-600 hover:text-slate-900'
-                }`}
-              >
-                {item.label}
-              </Link>
+              item.label === '车型中心' ? (
+                <div
+                  key={item.path}
+                  className="relative"
+                  onMouseEnter={() => setIsMegaMenuOpen(true)}
+                  onMouseLeave={() => setIsMegaMenuOpen(false)}
+                >
+                  <Link
+                    to={item.path}
+                    className={`font-medium transition-all ${
+                      location.pathname === item.path
+                        ? 'text-slate-900 border-b-2 border-red-600'
+                        : 'text-gray-600 hover:text-slate-900'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </div>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`font-medium transition-all ${
+                    location.pathname === item.path
+                      ? 'text-slate-900 border-b-2 border-red-600'
+                      : 'text-gray-600 hover:text-slate-900'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -84,6 +107,13 @@ export default function Header() {
             ))}
           </nav>
         )}
+      </div>
+
+      <div
+        onMouseEnter={() => setIsMegaMenuOpen(true)}
+        onMouseLeave={() => setIsMegaMenuOpen(false)}
+      >
+        <MegaMenu isVisible={isMegaMenuOpen} />
       </div>
     </header>
   );

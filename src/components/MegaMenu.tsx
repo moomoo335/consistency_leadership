@@ -1,0 +1,100 @@
+import { Link } from 'react-router-dom';
+import { ChevronRight } from 'lucide-react';
+
+interface MegaMenuProps {
+  isVisible: boolean;
+}
+
+export default function MegaMenu({ isVisible }: MegaMenuProps) {
+  const chenglongCategories = [
+    { label: '牵引车', path: '/models/chenglong' },
+    { label: '载货车', path: '/models/chenglong' },
+    { label: '自卸车', path: '/models/chenglong' },
+    { label: '新能源车', path: '/models/chenglong' },
+  ];
+
+  const aumanCategories = [
+    { label: '牵引车', path: '/models/auman' },
+    { label: '载货车', path: '/models/auman' },
+    { label: '自卸车', path: '/models/auman' },
+    { label: '新能源车', path: '/models/auman' },
+  ];
+
+  return (
+    <div
+      className={`absolute left-0 right-0 top-full bg-white shadow-2xl transition-all duration-300 ease-out ${
+        isVisible
+          ? 'opacity-100 translate-y-0 pointer-events-auto'
+          : 'opacity-0 -translate-y-4 pointer-events-none'
+      }`}
+    >
+      <div className="max-w-[1400px] mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-lg font-bold text-slate-900 mb-6 pb-3 border-b-2 border-slate-200">
+                  乘龙展厅
+                </h3>
+                <ul className="space-y-4">
+                  {chenglongCategories.map((category) => (
+                    <li key={category.label}>
+                      <Link
+                        to={category.path}
+                        className="group flex items-center justify-between py-2 text-gray-700 hover:text-slate-900 transition-colors"
+                      >
+                        <span className="text-base font-medium">{category.label}</span>
+                        <ChevronRight
+                          size={18}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-slate-900 mb-6 pb-3 border-b-2 border-slate-200">
+                  欧曼展厅
+                </h3>
+                <ul className="space-y-4">
+                  {aumanCategories.map((category) => (
+                    <li key={category.label}>
+                      <Link
+                        to={category.path}
+                        className="group flex items-center justify-between py-2 text-gray-700 hover:text-slate-900 transition-colors"
+                      >
+                        <span className="text-base font-medium">{category.label}</span>
+                        <ChevronRight
+                          size={18}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="bg-gray-50 rounded-lg p-8 h-full flex flex-col">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">车型中心</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                提供多品牌、多类型商用车选择，满足不同运输需求
+              </p>
+              <div className="mt-auto">
+                <img
+                  src="https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="商用车展示"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
