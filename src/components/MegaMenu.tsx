@@ -7,17 +7,17 @@ interface MegaMenuProps {
 
 export default function MegaMenu({ isVisible }: MegaMenuProps) {
   const chenglongCategories = [
-    { label: '牵引车', path: '/models/chenglong' },
-    { label: '载货车', path: '/models/chenglong' },
-    { label: '自卸车', path: '/models/chenglong' },
-    { label: '新能源车', path: '/models/chenglong' },
+    { label: '牵引车', path: '/models/chenglong/tractor' },
+    { label: '载货车', path: '/models/chenglong/cargo' },
+    { label: '自卸车', path: '/models/chenglong/dump' },
+    { label: '新能源车', path: '/models/chenglong/electric' },
   ];
 
   const aumanCategories = [
-    { label: '牵引车', path: '/models/auman' },
-    { label: '载货车', path: '/models/auman' },
-    { label: '自卸车', path: '/models/auman' },
-    { label: '新能源车', path: '/models/auman' },
+    { label: '牵引车', path: '/models/auman/tractor' },
+    { label: '载货车', path: '/models/auman/cargo' },
+    { label: '自卸车', path: '/models/auman/dump' },
+    { label: '新能源车', path: '/models/auman/electric' },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function MegaMenu({ isVisible }: MegaMenuProps) {
                     <li key={category.label}>
                       <Link
                         to={category.path}
-                        className="group flex items-center justify-between py-2 text-gray-700 hover:text-slate-900 transition-colors"
+                        className="group flex items-center justify-between py-2 text-gray-700 hover:text-slate-900 transition-colors cursor-pointer"
                       >
                         <span className="text-base font-medium">{category.label}</span>
                         <ChevronRight
@@ -63,7 +63,7 @@ export default function MegaMenu({ isVisible }: MegaMenuProps) {
                     <li key={category.label}>
                       <Link
                         to={category.path}
-                        className="group flex items-center justify-between py-2 text-gray-700 hover:text-slate-900 transition-colors"
+                        className="group flex items-center justify-between py-2 text-gray-700 hover:text-slate-900 transition-colors cursor-pointer"
                       >
                         <span className="text-base font-medium">{category.label}</span>
                         <ChevronRight
