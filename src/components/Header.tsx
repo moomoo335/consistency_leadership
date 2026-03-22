@@ -3,12 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Truck } from 'lucide-react';
 import MegaMenu from './MegaMenu';
 import ServiceMegaMenu from './ServiceMegaMenu';
+import PartsMegaMenu from './PartsMegaMenu';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isServiceMegaMenuOpen, setIsServiceMegaMenuOpen] = useState(false);
+  const [isPartsMegaMenuOpen, setIsPartsMegaMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,6 +25,7 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
     setIsServiceMegaMenuOpen(false);
+    setIsPartsMegaMenuOpen(false);
   }, [location]);
 
   const navItems = [
@@ -97,16 +100,23 @@ export default function Header() {
               <ServiceMegaMenu isVisible={isServiceMegaMenuOpen} />
             </div>
 
-            <Link
-              to="/parts"
-              className={`font-medium transition-all ${
-                location.pathname === '/parts'
-                  ? 'text-slate-900 border-b-2 border-red-600'
-                  : 'text-gray-600 hover:text-slate-900'
-              }`}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsPartsMegaMenuOpen(true)}
+              onMouseLeave={() => setIsPartsMegaMenuOpen(false)}
             >
-              汽车配件
-            </Link>
+              <Link
+                to="/parts"
+                className={`font-medium transition-all ${
+                  location.pathname === '/parts'
+                    ? 'text-slate-900 border-b-2 border-red-600'
+                    : 'text-gray-600 hover:text-slate-900'
+                }`}
+              >
+                汽车配件
+              </Link>
+              <PartsMegaMenu isVisible={isPartsMegaMenuOpen} />
+            </div>
 
             <Link
               to="/about"
