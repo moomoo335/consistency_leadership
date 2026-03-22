@@ -46,7 +46,7 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8 relative">
             <Link
               to="/"
               className={`font-medium transition-all ${
