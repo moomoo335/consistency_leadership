@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Truck } from 'lucide-react';
 import MegaMenu from './MegaMenu';
+import ServiceMegaMenu from './ServiceMegaMenu';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isServiceMegaMenuOpen, setIsServiceMegaMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,6 +22,7 @@ export default function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
+    setIsServiceMegaMenuOpen(false);
   }, [location]);
 
   const navItems = [
@@ -76,16 +79,23 @@ export default function Header() {
               <MegaMenu isVisible={isMegaMenuOpen} />
             </div>
 
-            <Link
-              to="/buying-service"
-              className={`font-medium transition-all ${
-                location.pathname === '/buying-service'
-                  ? 'text-slate-900 border-b-2 border-red-600'
-                  : 'text-gray-600 hover:text-slate-900'
-              }`}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServiceMegaMenuOpen(true)}
+              onMouseLeave={() => setIsServiceMegaMenuOpen(false)}
             >
-              购车与服务
-            </Link>
+              <Link
+                to="/buying-service"
+                className={`font-medium transition-all ${
+                  location.pathname === '/buying-service'
+                    ? 'text-slate-900 border-b-2 border-red-600'
+                    : 'text-gray-600 hover:text-slate-900'
+                }`}
+              >
+                购车与服务
+              </Link>
+              <ServiceMegaMenu isVisible={isServiceMegaMenuOpen} />
+            </div>
 
             <Link
               to="/parts"
