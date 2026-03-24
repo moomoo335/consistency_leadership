@@ -49,8 +49,14 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 mt-20">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative text-white py-24 mt-20">
+        <img
+          src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="关于我们"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-5xl font-bold mb-6">关于我们</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             专业、诚信、创新、共赢

@@ -21,8 +21,14 @@ export default function Models() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 mt-20">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative text-white py-24 mt-20">
+        <img
+          src="https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="车型中心"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-5xl font-bold mb-6">车型中心</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             选择品牌，探索专业商用车型
@@ -70,8 +76,14 @@ export default function Models() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 text-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 text-white">
+        <img
+          src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="购车咨询"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl font-bold mb-6">需要购车咨询？</h2>
           <p className="text-xl text-gray-300 mb-8">
             联系我们的专业顾问，为您推荐最适合的商用车方案
